@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Gelologist — BIAB Nail Specialist Manchester</title>
+<meta name="description" content="Manchester's BIAB nail specialist. Beautiful, healthy, long-lasting gel manicures in the Northern Quarter. Vegan & cruelty-free.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ivory: #faf8f5;
+  --white: #ffffff;
+  --blush: #f5ebe6;
+  --rose: #c9897a;
+  --rose-dark: #a06858;
+  --rose-pale: #f9f0ec;
+  --nude: #e8d5c8;
+  --taupe: #c4a898;
+  --dark: #1e1a18;
+  --mid: #6b5c54;
+  --muted: #b0978c;
+  --border: rgba(196,168,152,0.2);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--ivory); color:var(--dark); font-family:'Jost',sans-serif; overflow-x:hidden; }
+::-webkit-scrollbar { width:2px; }
+::-webkit-scrollbar-thumb { background:var(--taupe); }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; width:100%; z-index:999;
+  background:rgba(250,248,245,0.97); backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:0 60px; height:64px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.nav-logo {
+  font-family:'Cormorant',serif; font-size:1.1rem; font-weight:400;
+  letter-spacing:6px; text-transform:uppercase; color:var(--dark);
+  text-decoration:none;
+}
+.nav-logo em { font-style:italic; color:var(--rose); }
+.nav-links { display:flex; gap:36px; list-style:none; }
+.nav-links a { color:var(--mid); text-decoration:none; font-size:0.65rem; letter-spacing:4px; text-transform:uppercase; font-weight:300; transition:color 0.3s; }
+.nav-links a:hover { color:var(--rose); }
+.nav-cta {
+  font-size:0.62rem; letter-spacing:4px; text-transform:uppercase; font-weight:400;
+  color:var(--rose-dark); text-decoration:none; border-bottom:1px solid var(--rose-dark);
+  padding-bottom:2px; transition:all 0.3s;
+}
+.nav-cta:hover { color:var(--rose); border-color:var(--rose); }
+
+/* ── HERO ── */
+.hero {
+  min-height:100vh; display:grid; grid-template-columns:1fr 1fr;
+  padding-top:64px;
+}
+.hero-left {
+  display:flex; flex-direction:column; justify-content:center;
+  padding:80px 60px 80px 60px;
+  border-right:1px solid var(--border);
+}
+.hero-right {
+  background:var(--blush);
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  padding:80px 40px; position:relative; overflow:hidden;
+}
+.hero-right::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 80% 80% at 50% 50%, rgba(201,137,122,0.1) 0%, transparent 70%);
+}
+
+.hero-eyebrow {
+  font-size:0.58rem; letter-spacing:6px; text-transform:uppercase;
+  color:var(--taupe); margin-bottom:28px; font-weight:400;
+  display:flex; align-items:center; gap:12px;
+}
+.hero-eyebrow::before { content:''; width:30px; height:1px; background:var(--taupe); }
+
+.hero h1 {
+  font-family:'Cormorant',serif; font-weight:300;
+  font-size:clamp(3rem, 6vw, 5.5rem); line-height:1.05;
+  color:var(--dark); margin-bottom:8px;
+}
+.hero h1 em { font-style:italic; color:var(--rose); }
+.hero h1 .block { display:block; }
+
+.hero-desc {
+  font-size:0.82rem; color:var(--mid); line-height:1.9; font-weight:300;
+  margin:28px 0 44px; max-width:400px;
+}
+
+.hero-btns { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:56px; }
+.btn-rose {
+  background:var(--rose); color:#fff; padding:14px 40px;
+  font-size:0.62rem; letter-spacing:4px; text-transform:uppercase;
+  font-weight:400; text-decoration:none; transition:all 0.3s; display:inline-block;
+  border:1px solid var(--rose);
+}
+.btn-rose:hover { background:var(--rose-dark); border-color:var(--rose-dark); transform:translateY(-1px); }
+.btn-outline-rose {
+  background:transparent; color:var(--rose-dark); padding:14px 40px;
+  font-size:0.62rem; letter-spacing:4px; text-transform:uppercase; font-weight:400;
+  text-decoration:none; border:1px solid var(--rose-dark); transition:all 0.3s; display:inline-block;
+}
+.btn-outline-rose:hover { background:var(--rose-pale); }
+
+.hero-tags { display:flex; gap:10px; flex-wrap:wrap; }
+.htag {
+  font-size:0.58rem; letter-spacing:3px; text-transform:uppercase; font-weight:400;
+  padding:6px 14px; border:1px solid var(--border); color:var(--muted);
+}
+
+/* hero right content */
+.hero-stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); width:100%; max-width:340px; position:relative; z-index:1; }
+.hero-stat { background:var(--blush); padding:32px 28px; }
+.hero-stat-n { font-family:'Cormorant',serif; font-size:2.8rem; font-weight:300; color:var(--rose); display:block; line-height:1; margin-bottom:8px; font-style:italic; }
+.hero-stat-l { font-size:0.58rem; letter-spacing:3px; text-transform:uppercase; color:var(--taupe); }
+.hero-caption { margin-top:28px; font-family:'Cormorant',serif; font-style:italic; font-size:1rem; color:var(--taupe); text-align:center; position:relative; z-index:1; letter-spacing:1px; }
+
+/* ── STRIP ── */
+.strip {
+  background:var(--rose); padding:14px 0; overflow:hidden;
+}
+.strip-track { display:flex; width:max-content; animation:strip 35s linear infinite; }
+.strip-track span { font-size:0.62rem; letter-spacing:6px; text-transform:uppercase; color:rgba(255,255,255,0.85); white-space:nowrap; padding:0 28px; font-weight:300; }
+.strip-track .sep { color:rgba(255,255,255,0.3); }
+@keyframes strip { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── PHILOSOPHY ── */
+.philosophy {
+  display:grid; grid-template-columns:1fr 1fr; min-height:80vh;
+}
+.phil-left {
+  background:var(--dark); padding:100px 60px;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.phil-right { padding:100px 60px; display:flex; flex-direction:column; justify-content:center; }
+.phil-label { font-size:0.58rem; letter-spacing:6px; text-transform:uppercase; color:var(--taupe); margin-bottom:24px; }
+.phil-left .phil-label { color:rgba(196,168,152,0.6); }
+.phil-quote {
+  font-family:'Cormorant',serif; font-weight:300; font-style:italic;
+  font-size:clamp(1.8rem,3vw,2.8rem); line-height:1.3; color:var(--white);
+  margin-bottom:32px;
+}
+.phil-quote em { color:var(--rose); font-style:normal; }
+.phil-body { font-size:0.82rem; color:rgba(255,255,255,0.5); line-height:1.9; font-weight:300; }
+.phil-right h2 { font-family:'Cormorant',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:300; margin-bottom:24px; line-height:1.1; }
+.phil-right h2 em { font-style:italic; color:var(--rose); }
+.phil-right p { font-size:0.85rem; color:var(--mid); line-height:1.9; font-weight:300; margin-bottom:16px; }
+.phil-badges { display:flex; gap:10px; flex-wrap:wrap; margin-top:28px; }
+.phil-badge { padding:8px 18px; font-size:0.6rem; letter-spacing:3px; text-transform:uppercase; border:1px solid var(--border); color:var(--taupe); }
+
+/* ── SERVICES ── */
+.services-section { padding:100px 60px; max-width:1300px; margin:0 auto; }
+.section-head { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:64px; border-bottom:1px solid var(--border); padding-bottom:32px; }
+.s-label { font-size:0.58rem; letter-spacing:6px; text-transform:uppercase; color:var(--taupe); margin-bottom:12px; }
+.s-title { font-family:'Cormorant',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:300; }
+.s-title em { font-style:italic; color:var(--rose); }
+.s-count { font-family:'Cormorant',serif; font-size:4rem; font-weight:300; color:var(--nude); font-style:italic; }
+
+.srv-list { display:flex; flex-direction:column; }
+.srv-row {
+  display:grid; grid-template-columns:60px 1fr 200px 120px;
+  align-items:center; gap:40px;
+  padding:32px 0; border-bottom:1px solid var(--border);
+  transition:all 0.3s; cursor:default;
+}
+.srv-row:hover { background:var(--rose-pale); padding-left:20px; padding-right:20px; margin:0 -20px; }
+.srv-num { font-family:'Cormorant',serif; font-size:1rem; color:var(--nude); font-style:italic; font-weight:300; }
+.srv-name { font-family:'Cormorant',serif; font-size:1.4rem; font-weight:300; }
+.srv-name em { font-style:italic; color:var(--rose); font-size:0.85rem; display:block; font-family:'Jost',sans-serif; font-weight:300; letter-spacing:1px; margin-top:4px; }
+.srv-desc { font-size:0.78rem; color:var(--mid); line-height:1.7; font-weight:300; }
+.srv-price { font-family:'Cormorant',serif; font-size:1.4rem; color:var(--rose); font-style:italic; text-align:right; }
+
+/* ── GALLERY ── */
+.gallery-section { background:var(--blush); padding:100px 0; }
+.gallery-inner { padding:0 60px; max-width:1300px; margin:0 auto; }
+.gallery-head { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:end; margin-bottom:48px; }
+
+.gallery-filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:40px; }
+.gf { padding:7px 18px; font-size:0.58rem; letter-spacing:3px; text-transform:uppercase; border:1px solid var(--border); color:var(--taupe); background:transparent; cursor:pointer; transition:all 0.2s; font-family:'Jost',sans-serif; font-weight:300; }
+.gf.on, .gf:hover { border-color:var(--rose); color:var(--rose); background:rgba(201,137,122,0.06); }
+
+/* bento gallery layout */
+.bento { display:grid; grid-template-columns:repeat(12,1fr); grid-template-rows:auto; gap:12px; }
+.b-item { border-radius:0; overflow:hidden; cursor:pointer; position:relative; transition:transform 0.4s; }
+.b-item:hover { transform:scale(1.01); z-index:2; }
+.b-item:hover .b-overlay { opacity:1; }
+.b1 { grid-column:span 5; grid-row:span 2; }
+.b2 { grid-column:span 4; grid-row:span 1; }
+.b3 { grid-column:span 3; grid-row:span 1; }
+.b4 { grid-column:span 4; grid-row:span 1; }
+.b5 { grid-column:span 3; grid-row:span 1; }
+.b6 { grid-column:span 4; grid-row:span 1; }
+.b7 { grid-column:span 8; grid-row:span 1; }
+.b-tile { width:100%; display:flex; align-items:center; justify-content:center; font-size:3rem; }
+.b1 .b-tile { height:440px; }
+.b2 .b-tile, .b3 .b-tile, .b4 .b-tile, .b5 .b-tile, .b6 .b-tile { height:200px; }
+.b7 .b-tile { height:180px; }
+.gc1 { background:linear-gradient(135deg,#f5ebe6,#f0ddd5); }
+.gc2 { background:linear-gradient(135deg,#faf0e8,#f5e0d0); }
+.gc3 { background:linear-gradient(135deg,#f8f0f0,#f0e0e8); }
+.gc4 { background:linear-gradient(135deg,#f8f5e8,#f0e8d0); }
+.gc5 { background:linear-gradient(135deg,#f0f0f8,#e8e0f0); }
+.gc6 { background:linear-gradient(135deg,#f5f0f0,#ece0e0); }
+.gc7 { background:linear-gradient(135deg,#f8ece8,#f0dcd8); }
+.b-overlay {
+  position:absolute; inset:0; opacity:0; transition:opacity 0.3s;
+  background:rgba(201,137,122,0.55);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+}
+.b-ol-text { color:#fff; font-size:0.6rem; letter-spacing:4px; text-transform:uppercase; font-weight:400; }
+.b-ol-sub { color:rgba(255,255,255,0.7); font-size:0.55rem; letter-spacing:3px; text-transform:uppercase; }
+
+/* ── NAIL HEALTH ── */
+.health-section { padding:100px 60px; max-width:1300px; margin:0 auto; }
+.health-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-top:64px; }
+.health-card { background:var(--ivory); padding:48px 36px; position:relative; overflow:hidden; transition:background 0.3s; }
+.health-card:hover { background:var(--rose-pale); }
+.health-icon { font-size:1.8rem; margin-bottom:20px; display:block; }
+.health-card h3 { font-family:'Cormorant',serif; font-size:1.4rem; font-weight:300; margin-bottom:12px; }
+.health-card h3 em { font-style:italic; color:var(--rose); }
+.health-card p { font-size:0.78rem; color:var(--mid); line-height:1.9; font-weight:300; }
+.health-num { position:absolute; top:24px; right:28px; font-family:'Cormorant',serif; font-size:3rem; font-weight:300; color:var(--nude); opacity:0.5; font-style:italic; }
+
+/* ── TESTIMONIALS ── */
+.testi-section { background:var(--dark); padding:100px 60px; }
+.testi-inner { max-width:1300px; margin:0 auto; }
+.testi-head { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:end; margin-bottom:64px; }
+.testi-head-label { font-size:0.58rem; letter-spacing:6px; text-transform:uppercase; color:rgba(196,168,152,0.5); margin-bottom:12px; }
+.testi-head h2 { font-family:'Cormorant',serif; font-size:clamp(2rem,4vw,3.5rem); font-weight:300; color:var(--white); }
+.testi-head h2 em { font-style:italic; color:var(--rose); }
+.testi-head p { font-size:0.82rem; color:rgba(255,255,255,0.4); line-height:1.9; font-weight:300; }
+.testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(196,168,152,0.1); border:1px solid rgba(196,168,152,0.1); }
+.testi-card { background:var(--dark); padding:44px 36px; transition:background 0.3s; }
+.testi-card:hover { background:#242018; }
+.testi-stars { color:var(--rose); font-size:0.7rem; letter-spacing:3px; margin-bottom:20px; }
+.testi-q {
+  font-family:'Cormorant',serif; font-style:italic; font-weight:300;
+  font-size:1.05rem; color:rgba(255,255,255,0.75); line-height:1.8; margin-bottom:24px;
+}
+.testi-who { font-size:0.6rem; letter-spacing:3px; text-transform:uppercase; color:rgba(196,168,152,0.4); }
+
+/* ── BOOKING ── */
+.book-section {
+  padding:120px 60px; text-align:center;
+  background:var(--rose-pale); position:relative; overflow:hidden;
+}
+.book-section::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 70% 70% at 50% 50%, rgba(201,137,122,0.1) 0%, transparent 70%);
+}
+.book-inner { position:relative; z-index:1; max-width:680px; margin:0 auto; }
+.book-label { font-size:0.58rem; letter-spacing:6px; text-transform:uppercase; color:var(--taupe); margin-bottom:20px; display:flex; align-items:center; justify-content:center; gap:12px; }
+.book-label::before, .book-label::after { content:''; width:30px; height:1px; background:var(--taupe); }
+.book-inner h2 { font-family:'Cormorant',serif; font-size:clamp(2.5rem,6vw,5rem); font-weight:300; margin-bottom:16px; }
+.book-inner h2 em { font-style:italic; color:var(--rose); }
+.book-inner p { font-size:0.85rem; color:var(--mid); line-height:1.9; font-weight:300; margin-bottom:48px; }
+.book-promise { display:inline-flex; align-items:center; gap:8px; font-size:0.6rem; letter-spacing:3px; text-transform:uppercase; color:var(--taupe); margin-top:32px; }
+
+/* ── FAQ ── */
+.faq-section { padding:100px 60px; max-width:900px; margin:0 auto; }
+.faq-grid { margin-top:64px; }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-q {
+  padding:28px 0; font-family:'Cormorant',serif; font-size:1.15rem; font-weight:300;
+  cursor:pointer; display:flex; justify-content:space-between; align-items:center;
+  transition:color 0.2s; color:var(--dark); letter-spacing:0.5px;
+}
+.faq-q:hover { color:var(--rose); }
+.faq-icon { color:var(--taupe); font-size:1rem; transition:transform 0.3s; flex-shrink:0; font-style:normal; font-family:'Jost',sans-serif; }
+.faq-a { color:var(--mid); font-size:0.82rem; line-height:1.9; padding:0 0 24px; display:none; font-weight:300; }
+.faq-item.open .faq-a { display:block; }
+.faq-item.open .faq-icon { transform:rotate(45deg); }
+
+/* ── FOOTER ── */
+footer { background:var(--dark); border-top:1px solid rgba(196,168,152,0.1); padding:80px 60px 48px; }
+.ft { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:60px; margin-bottom:60px; }
+.ft-logo-text { font-family:'Cormorant',serif; font-size:1.3rem; letter-spacing:4px; text-transform:uppercase; font-weight:300; color:var(--white); display:block; margin-bottom:12px; }
+.ft-logo-text em { font-style:italic; color:var(--rose); }
+.ft-desc { color:rgba(255,255,255,0.35); font-size:0.78rem; line-height:1.9; font-weight:300; margin-bottom:20px; }
+.ft-bgs { display:flex; gap:8px; flex-wrap:wrap; }
+.ft-bg { font-size:0.55rem; letter-spacing:2px; text-transform:uppercase; padding:5px 12px; border:1px solid rgba(196,168,152,0.15); color:rgba(196,168,152,0.4); }
+.ft-col h4 { font-size:0.6rem; letter-spacing:4px; text-transform:uppercase; color:rgba(196,168,152,0.35); margin-bottom:20px; font-weight:300; }
+.ft-col ul { list-style:none; }
+.ft-col ul li { margin-bottom:12px; }
+.ft-col ul a { color:rgba(255,255,255,0.4); text-decoration:none; font-size:0.8rem; transition:color 0.2s; font-weight:300; }
+.ft-col ul a:hover { color:var(--rose); }
+.ft-bot { display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(196,168,152,0.08); padding-top:32px; flex-wrap:wrap; gap:16px; }
+.ft-copy { color:rgba(255,255,255,0.18); font-size:0.65rem; letter-spacing:1px; font-weight:300; }
+.ft-ig { color:var(--taupe); font-size:0.6rem; letter-spacing:3px; text-decoration:none; text-transform:uppercase; transition:color 0.2s; }
+.ft-ig:hover { color:var(--rose); }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(32px); transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+.reveal.in { opacity:1; transform:translateY(0); }
+.d1 { transition-delay:0.1s; }
+.d2 { transition-delay:0.2s; }
+.d3 { transition-delay:0.3s; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:1000px) {
+  nav { padding:0 24px; }
+  .nav-links { display:none; }
+  .hero { grid-template-columns:1fr; }
+  .hero-left { padding:80px 24px 48px; }
+  .hero-right { padding:48px 24px 80px; }
+  .philosophy { grid-template-columns:1fr; }
+  .phil-left, .phil-right { padding:60px 24px; }
+  .services-section, .health-section, .faq-section { padding:70px 24px; }
+  .gallery-inner { padding:0 24px; }
+  .testi-section { padding:70px 24px; }
+  .book-section { padding:80px 24px; }
+  footer { padding:60px 24px 40px; }
+  .ft { grid-template-columns:1fr 1fr; gap:32px; }
+  .testi-grid { grid-template-columns:1fr; }
+  .health-grid { grid-template-columns:1fr; }
+  .bento { grid-template-columns:1fr 1fr; }
+  .b1,.b2,.b3,.b4,.b5,.b6,.b7 { grid-column:span 1; grid-row:span 1; }
+  .b1 .b-tile,.b2 .b-tile,.b3 .b-tile,.b4 .b-tile,.b5 .b-tile,.b6 .b-tile,.b7 .b-tile { height:200px; }
+  .section-head { flex-direction:column; gap:8px; align-items:flex-start; }
+  .srv-row { grid-template-columns:40px 1fr; gap:16px; }
+  .srv-desc, .srv-price { display:none; }
+  .testi-head { grid-template-columns:1fr; gap:24px; }
+  .gallery-head { grid-template-columns:1fr; }
+}
+@media(max-width:540px) {
+  .ft { grid-template-columns:1fr; }
+  .bento { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">The <em>Gelologist</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#health">Nail Health</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#book" class="nav-cta">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Manchester Northern Quarter · BIAB Specialist</div>
+    <h1>
+      <span class="block">The</span>
+      <em>Gelologist.</em>
+    </h1>
+    <p class="hero-desc">Beautiful, healthy, long-lasting gel manicures on natural nails. No extensions. No compromise. Just the finest BIAB artistry in Manchester.</p>
+    <div class="hero-btns">
+      <a href="#book" class="btn-rose">Book an Appointment</a>
+      <a href="#gallery" class="btn-outline-rose">View the Gallery</a>
+    </div>
+    <div class="hero-tags">
+      <span class="htag">BIAB Specialist</span>
+      <span class="htag">Natural Nails Only</span>
+      <span class="htag">Vegan & Cruelty Free</span>
+      <span class="htag">Northern Quarter MCR</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat-grid">
+      <div class="hero-stat"><span class="hero-stat-n">5.0★</span><span class="hero-stat-l">Google Rating</span></div>
+      <div class="hero-stat"><span class="hero-stat-n">14+</span><span class="hero-stat-l">Verified Reviews</span></div>
+      <div class="hero-stat"><span class="hero-stat-n">100%</span><span class="hero-stat-l">Natural Nails</span></div>
+      <div class="hero-stat"><span class="hero-stat-n">BIAB</span><span class="hero-stat-l">Specialist</span></div>
+    </div>
+    <p class="hero-caption">healthy nails, artfully done.</p>
+  </div>
+</div>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-track">
+    <span>BIAB SPECIALIST</span><span class="sep">·</span>
+    <span>NATURAL NAILS</span><span class="sep">·</span>
+    <span>HAND PAINTED ART</span><span class="sep">·</span>
+    <span>CAT EYE & CHROME</span><span class="sep">·</span>
+    <span>BLOOMING GELS</span><span class="sep">·</span>
+    <span>VEGAN & CRUELTY FREE</span><span class="sep">·</span>
+    <span>NORTHERN QUARTER MCR</span><span class="sep">·</span>
+    <span>NAIL HEALTH FOCUSED</span><span class="sep">·</span>
+    <span>BIAB SPECIALIST</span><span class="sep">·</span>
+    <span>NATURAL NAILS</span><span class="sep">·</span>
+    <span>HAND PAINTED ART</span><span class="sep">·</span>
+    <span>CAT EYE & CHROME</span><span class="sep">·</span>
+    <span>BLOOMING GELS</span><span class="sep">·</span>
+    <span>VEGAN & CRUELTY FREE</span><span class="sep">·</span>
+    <span>NORTHERN QUARTER MCR</span><span class="sep">·</span>
+    <span>NAIL HEALTH FOCUSED</span><span class="sep">·</span>
+  </div>
+</div>
+
+<!-- PHILOSOPHY / ABOUT -->
+<div class="philosophy" id="about">
+  <div class="phil-left reveal">
+    <div class="phil-label">The Philosophy</div>
+    <div class="phil-quote">
+      "Beautiful nails should never come at the cost of <em>healthy</em> ones."
+    </div>
+    <p class="phil-body">The Gelologist was built on one belief: that your natural nails deserve to be treated with care, not covered up. Every appointment is an act of artistry and nail health in equal measure.</p>
+  </div>
+  <div class="phil-right reveal d1">
+    <div class="s-label">About Georgia</div>
+    <h2><em>Manchester's</em><br>Natural Nail Specialist</h2>
+    <p>Hi, I'm Georgia — a BIAB nail specialist based in Manchester's Northern Quarter. I work exclusively on natural nails, combining beautiful gel art with a genuine focus on nail health and growth.</p>
+    <p>Every set I create — from delicate florals to precise geometric patterns, cat-eye effects to blooming gels — is designed to be as kind to your natural nails as it is stunning to look at.</p>
+    <div class="phil-badges">
+      <span class="phil-badge">🌱 Vegan</span>
+      <span class="phil-badge">🐰 Cruelty Free</span>
+      <span class="phil-badge">💅 BIAB Expert</span>
+      <span class="phil-badge">🌸 Natural Nails Only</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="services-section" id="services">
+  <div class="section-head reveal">
+    <div>
+      <div class="s-label">What I Offer</div>
+      <h2 class="s-title">Services &<br><em>Specialities</em></h2>
+    </div>
+    <span class="s-count">06</span>
+  </div>
+  <div class="srv-list reveal">
+    <div class="srv-row">
+      <span class="srv-num">01</span>
+      <div class="srv-name">BIAB Overlay<em>Builder In A Bottle · the signature service</em></div>
+      <p class="srv-desc">The gold standard for natural nail strength. Flexible gel that protects and grows your nails while you wear beautiful art.</p>
+      <span class="srv-price">From £45</span>
+    </div>
+    <div class="srv-row">
+      <span class="srv-num">02</span>
+      <div class="srv-name">Hand-Painted Art<em>florals · botanicals · geometric · animal print</em></div>
+      <p class="srv-desc">Intricate freehand designs painted directly onto your nails. From delicate daisies to bold leopard prints.</p>
+      <span class="srv-price">From £55</span>
+    </div>
+    <div class="srv-row">
+      <span class="srv-num">03</span>
+      <div class="srv-name">Cat Eye & Chrome<em>magnetic · holographic · mirror effects</em></div>
+      <p class="srv-desc">Mesmerising magnetic cat-eye depth and mirror-finish chrome that shifts with every movement of your hand.</p>
+      <span class="srv-price">From £50</span>
+    </div>
+    <div class="srv-row">
+      <span class="srv-num">04</span>
+      <div class="srv-name">Blooming Gel Art<em>soft · diffused · watercolour-like effects</em></div>
+      <p class="srv-desc">Soft, dreamy colour blending that creates effortless watercolour effects on your natural nails.</p>
+      <span class="srv-price">From £48</span>
+    </div>
+    <div class="srv-row">
+      <span class="srv-num">05</span>
+      <div class="srv-name">BIAB Infills<em>maintenance · refresh · growth check</em></div>
+      <p class="srv-desc">Regular infill appointments to maintain your set, check your nail growth progress, and refresh your design.</p>
+      <span class="srv-price">From £38</span>
+    </div>
+    <div class="srv-row">
+      <span class="srv-num">06</span>
+      <div class="srv-name">Seasonal & Themed Sets<em>limited edition · special occasion · festive</em></div>
+      <p class="srv-desc">Exclusive seasonal designs — from winter stripes to floral spring collections. Book early as slots are very limited.</p>
+      <span class="srv-price">From £60</span>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery-section" id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-head reveal">
+      <div>
+        <div class="s-label">Portfolio</div>
+        <h2 class="s-title" style="font-family:'Cormorant',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;">The <em style="font-style:italic;color:var(--rose);">Gallery</em></h2>
+      </div>
+      <p style="font-size:0.8rem;color:var(--mid);font-weight:300;max-width:300px;line-height:1.8;">Every set, a study in precision. Every client, a natural nail transformation.</p>
+    </div>
+    <div class="gallery-filters reveal">
+      <button class="gf on">All</button>
+      <button class="gf">Florals</button>
+      <button class="gf">Cat Eye</button>
+      <button class="gf">Animal Print</button>
+      <button class="gf">Blooming</button>
+      <button class="gf">Seasonal</button>
+    </div>
+    <div class="bento reveal">
+      <div class="b-item b1"><div class="b-tile gc1" style="height:440px;">🌸</div><div class="b-overlay"><span class="b-ol-text">Floral BIAB</span><span class="b-ol-sub">Book This Look</span></div></div>
+      <div class="b-item b2"><div class="b-tile gc2" style="height:200px;">🔮</div><div class="b-overlay"><span class="b-ol-text">Cat Eye Chrome</span><span class="b-ol-sub">Magnetic Effect</span></div></div>
+      <div class="b-item b3"><div class="b-tile gc3" style="height:200px;">🐆</div><div class="b-overlay"><span class="b-ol-text">Leopard Print</span><span class="b-ol-sub">Animal Art</span></div></div>
+      <div class="b-item b4"><div class="b-tile gc4" style="height:200px;">🌿</div><div class="b-overlay"><span class="b-ol-text">Blooming Gel</span><span class="b-ol-sub">Watercolour Effect</span></div></div>
+      <div class="b-item b5"><div class="b-tile gc5" style="height:200px;">✨</div><div class="b-overlay"><span class="b-ol-text">Shimmer Finish</span></div></div>
+      <div class="b-item b6"><div class="b-tile gc6" style="height:200px;">🌷</div><div class="b-overlay"><span class="b-ol-text">Spring Florals</span></div></div>
+      <div class="b-item b7"><div class="b-tile gc7" style="height:180px;">🎨</div><div class="b-overlay"><span class="b-ol-text">Geometric Art · Stripe Design</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAIL HEALTH -->
+<div class="health-section" id="health">
+  <div class="reveal">
+    <div class="s-label">Why It Matters</div>
+    <h2 class="s-title" style="font-family:'Cormorant',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;">The <em style="font-style:italic;color:var(--rose);">Nail Health</em> Difference</h2>
+    <p style="font-size:0.83rem;color:var(--mid);font-weight:300;line-height:1.9;max-width:600px;margin-top:16px;">At The Gelologist, nail health isn't an afterthought — it's the foundation of everything.</p>
+  </div>
+  <div class="health-grid reveal">
+    <div class="health-card">
+      <span class="health-num">01</span>
+      <span class="health-icon">💅</span>
+      <h3>BIAB <em>Strengthens</em></h3>
+      <p>Unlike acrylic or hard gel, BIAB is a flexible builder gel that moves with your natural nail — reducing breakage and actually helping your nails grow longer and stronger over time.</p>
+    </div>
+    <div class="health-card">
+      <span class="health-num">02</span>
+      <span class="health-icon">🌱</span>
+      <h3>No <em>Damage</em></h3>
+      <p>No drills on the natural nail. Minimal filing. Careful removal every time. Your nail plate is treated with the same care as the art on top of it — because it deserves to be.</p>
+    </div>
+    <div class="health-card">
+      <span class="health-num">03</span>
+      <span class="health-icon">✨</span>
+      <h3>Long <em>Lasting</em></h3>
+      <p>A properly applied BIAB set lasts 3–4 weeks with minimal chipping or lifting. Beautiful nails that genuinely work with your lifestyle, not against it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testi-section" id="reviews">
+  <div class="testi-inner">
+    <div class="testi-head reveal">
+      <div>
+        <div class="testi-head-label">Client Words</div>
+        <h2>5.0 Stars.<br><em>Every Time.</em></h2>
+      </div>
+      <p>14 five-star reviews and counting. Real clients, real results, real nail transformations in the heart of Manchester.</p>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <div class="testi-q">Georgia is the only person I trust with my natural nails. My nails have grown so much since I started BIAB with her — and the designs are always absolutely stunning.</div>
+        <div class="testi-who">Google Review · 5 Stars</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <div class="testi-q">The leopard print set she did for me was beyond what I imagined. Precise, beautiful, and still perfect three weeks later. I will never go anywhere else.</div>
+        <div class="testi-who">Google Review · 5 Stars</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★ ★ ★ ★ ★</div>
+        <div class="testi-q">I was always nervous about gel because of the damage — Georgia completely changed my mind. My nails have never been healthier or more beautiful. Honestly life changing.</div>
+        <div class="testi-who">Google Review · 5 Stars</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING -->
+<div class="book-section" id="book">
+  <div class="book-inner reveal">
+    <div class="book-label">Reserve Your Appointment</div>
+    <h2>Book with<br><em>The Gelologist</em></h2>
+    <p>Slots are limited and fill quickly — especially for hand-painted and seasonal sets. Book your appointment directly below with zero platform fees.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="#" class="btn-rose">Book Directly Now</a>
+      <a href="https://instagram.com/the_gelologist" target="_blank" class="btn-outline-rose">Follow on Instagram</a>
+    </div>
+    <div class="book-promise">· Manchester Northern Quarter · Vegan & Cruelty Free · Natural Nails Only ·</div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section" id="faq">
+  <div class="s-label">Questions</div>
+  <h2 class="s-title" style="font-family:'Cormorant',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;"><em style="font-style:italic;color:var(--rose);">Frequently</em> Asked</h2>
+  <div class="faq-grid reveal">
+    <div class="faq-item open">
+      <div class="faq-q" onclick="toggleFaq(this)">What is BIAB and why is it better for natural nails? <span class="faq-icon">+</span></div>
+      <div class="faq-a">BIAB (Builder In A Bottle) is a flexible builder gel applied directly to the natural nail. Unlike hard gels or acrylics, it flexes with your natural nail, dramatically reducing breakage. It also requires minimal filing and no aggressive drilling — making it the healthiest option for growing strong, beautiful natural nails.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do you do nail extensions or acrylics? <span class="faq-icon">+</span></div>
+      <div class="faq-a">No — I specialise exclusively in natural nails with BIAB overlay. This is a deliberate choice because I believe in protecting and growing your natural nails rather than covering them up. The results speak for themselves.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How long does a BIAB set last? <span class="faq-icon">+</span></div>
+      <div class="faq-a">A properly applied BIAB set lasts 3–4 weeks with minimal chipping or lifting. I recommend infill appointments every 3 weeks to keep your nails looking their best and to check on your natural nail growth progress.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Are your products vegan and cruelty-free? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Yes, always. Every product I use is vegan and cruelty-free. If you have specific allergies or sensitivities, please let me know when booking and I'll ensure everything is suitable for you.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Where are you located? <span class="faq-icon">+</span></div>
+      <div class="faq-a">I'm based in Manchester's Northern Quarter at 3rd Floor, 82 King St, Manchester M2 4WQ. It's a beautiful, calm studio space — the perfect environment for a relaxing nail appointment.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How do I book? <span class="faq-icon">+</span></div>
+      <div class="faq-a">Book directly through this website or DM me on Instagram @the_gelologist. I recommend booking at least 2 weeks in advance — especially for hand-painted and seasonal sets which have very limited availability.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div>
+      <span class="ft-logo-text">The <em>Gelologist</em></span>
+      <p class="ft-desc">Manchester's BIAB nail specialist. Beautiful, healthy, long-lasting gel manicures on natural nails only. Northern Quarter, Manchester. Vegan & cruelty-free always.</p>
+      <div class="ft-bgs">
+        <span class="ft-bg">🌱 Vegan</span>
+        <span class="ft-bg">🐰 Cruelty Free</span>
+        <span class="ft-bg">💅 BIAB Expert</span>
+        <span class="ft-bg">🌸 Natural Nails</span>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#health">Nail Health</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">BIAB Overlay</a></li>
+        <li><a href="#services">Hand-Painted Art</a></li>
+        <li><a href="#services">Cat Eye & Chrome</a></li>
+        <li><a href="#services">Blooming Gel</a></li>
+        <li><a href="#services">Seasonal Sets</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Find Me</h4>
+      <ul>
+        <li><a href="#">3rd Floor, 82 King St</a></li>
+        <li><a href="#">Manchester M2 4WQ</a></li>
+        <li><a href="https://instagram.com/the_gelologist">@the_gelologist</a></li>
+        <li><a href="#book">Book Now →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-copy">© 2025 The Gelologist · Manchester · All rights reserved</span>
+    <a class="ft-ig" href="https://instagram.com/the_gelologist">→ @the_gelologist</a>
+  </div>
+</footer>
+
+<script>
+const ro = new IntersectionObserver(e => e.forEach(el => { if(el.isIntersecting) el.target.classList.add('in'); }), {threshold:0.06});
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+document.querySelectorAll('.gf').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.gf').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+  });
+});
+</script>
+</body>
+</html>
